@@ -29,7 +29,7 @@ unzip main.zip
 
 echo "Movendo arquivo para pasta do apache"
 
-cd linux-site-dio
+cd linux-site-dio-main
 
 cp -R * /var/www/html/
 
