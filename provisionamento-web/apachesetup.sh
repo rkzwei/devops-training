@@ -4,28 +4,35 @@ echo "Executando setup de criação de servidor"
 
 echo "Verificando atualizações"
 
-apt update 
+apt-get update 
 
 echo "Atualizando sistema"
 
-apt upgrade -y
+apt-get upgrade -y
 
 echo "Instalando Apache"
 
-apt install apache2 -y
+apt-get install apache2 -y
 
 echo "Instalando unzip"
 
-apt install unzip -y 
+apt-get install unzip -y 
+
 
 echo "Recebendo e descompactando arquivos do repositório remoto"
 
-wget -P /tmp http://github.com/denilsonbonatti/linux-site-dio/archive/refs/heads/main.zip
+cd /tmp
 
-unzip /tmp/main.zip
+wget http://github.com/denilsonbonatti/linux-site-dio/archive/refs/heads/main.zip
+
+unzip main.zip
 
 echo "Movendo arquivo para pasta do apache"
 
-cp -R /tmp/linux-site-dio/* /var/www/html/
+cd linux-site-dio
+
+cp -R * /var/www/html/
 
 echo "Finalizado"
+
+
